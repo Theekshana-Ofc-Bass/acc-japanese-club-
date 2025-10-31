@@ -1,47 +1,135 @@
 <!DOCTYPE html>
 <html lang="si">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>acc japanese club</title>
-<style>
-  body {
-    margin: 0;
-    height: 100vh;
-    background-color: black; /* කලු background */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
+  <meta charset="UTF-8">
+  <!-- Zoom disable on mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>ACC JAPANESE CLUB</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: black;
+      color: white;
+      font-family: "Poppins", sans-serif;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+    }
 
-  /* Red line grid pattern */
-  .grid {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: 
-      linear-gradient(90deg, rgba(255, 0, 0, 0.3) 1px, transparent 1px),
-      linear-gradient(rgba(255, 0, 0, 0.3) 1px, transparent 1px);
-    background-size: 60px 60px; /* රේඛා අතර දුර */
-    animation: moveGrid 6s linear infinite;
-  }
+    /* 🔴 Soft red line grid background */
+    .grid {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-image: 
+        linear-gradient(90deg, rgba(255, 0, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(rgba(255, 0, 0, 0.1) 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: moveGrid 6s linear infinite;
+      z-index: 0;
+    }
 
-  @keyframes moveGrid {
-    from { background-position: 0 0; }
-    to { background-position: 60px 60px; }
-  }
+    @keyframes moveGrid {
+      from { background-position: 0 0; }
+      to { background-position: 60px 60px; }
+    }
 
-  h1 {
-    color: white;
-    font-family: sans-serif;
-    z-index: 2;
-    position: relative;
-  }
-</style>
+    /* 🔘 Logo circle */
+    .logo-circle {
+      margin-top: 120px;
+      width: 150px;
+      height: 150px;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo-circle img {
+      width: 80%;
+      height: auto;
+    }
+
+    /* 🏮 Website name */
+    .site-title {
+      margin-top: 25px;
+      font-size: 32px;
+      letter-spacing: 2px;
+      font-weight: bold;
+      position: relative;
+      z-index: 1;
+    }
+
+    .site-title .red {
+      color: #ff2d2d;
+    }
+
+    /* 🔘 Register Button */
+    .register-btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 30px;
+      font-size: 18px;
+      font-weight: 600;
+      color: white;
+      background-color: #ff2d2d;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(255, 45, 45, 0.5);
+      position: relative;
+      z-index: 1;
+    }
+
+    .register-btn:hover {
+      background-color: #ff4444;
+      box-shadow: 0 0 25px rgba(255, 45, 45, 0.8);
+      transform: scale(1.05);
+    }
+
+    /* Content section */
+    .content {
+      margin-top: 120px;
+      font-size: 18px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- 🔴 Animated Background -->
   <div class="grid"></div>
-  <h1>Welcome!</h1>
+
+  <!-- 🌀 Logo -->
+  <div class="logo-circle">
+    <img src="logo.png" alt="Logo">
+  </div>
+
+  <!-- 🏮 Website Title -->
+  <h1 class="site-title">
+    ACC <span class="red">JAPANESE</span> CLUB
+  </h1>
+
+  <!-- 🔘 Register Button -->
+  <a href="register.html" class="register-btn">Register</a>
+
+  <div class="content">
 </body>
 </html>
